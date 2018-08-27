@@ -42,11 +42,13 @@
             // 
             this.tbSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tbSize.Location = new System.Drawing.Point(12, 397);
-            this.tbSize.Minimum = 1;
+            this.tbSize.Maximum = 100;
+            this.tbSize.Minimum = 20;
             this.tbSize.Name = "tbSize";
             this.tbSize.Size = new System.Drawing.Size(104, 45);
             this.tbSize.TabIndex = 0;
-            this.tbSize.Value = 5;
+            this.tbSize.TickFrequency = 10;
+            this.tbSize.Value = 50;
             // 
             // tbSpeed
             // 
