@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace Bouncing_Ball
 {
@@ -14,7 +9,7 @@ namespace Bouncing_Ball
         protected int xDir = 1, yDir = 1; // direction of ball travel on each axis
 
         //Draw the ball using a provided graphics object and size value. This will be diferent for each ball type and must be overridden.
-        public abstract void Draw(Graphics g,int size);
+        public abstract void Draw(Graphics g, int size);
 
         //Check for boundary collisions, and then move the ball accordingly
         public void Move(int size, int speed, int winWidth, int winHeight)
