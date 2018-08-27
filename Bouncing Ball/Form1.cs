@@ -18,7 +18,7 @@ namespace Bouncing_Ball
         {
             //instantiate the ball with some random co-ordinates
             Random rnd = new Random();
-            ball = new SquareRainbowBall(rnd.Next(1, ClientSize.Width - tbSize.Value), rnd.Next(1, ClientSize.Height - tbSize.Value));
+            ball = new RoundBall(rnd.Next(1, ClientSize.Width - tbSize.Value), rnd.Next(1, ClientSize.Height - tbSize.Value));
             //refresh the form to trigger the paint event
             Refresh();
         }
@@ -40,11 +40,13 @@ namespace Bouncing_Ball
 
         private void btnChange_Click(object sender, EventArgs e)
         {
+            //check the type of the ball, and replace it with a new ball of the other type, in the same location, heading the same way.
             if (ball.GetType() == typeof(SquareRainbowBall))
             {
-                ball = new RoundBall(ball.GetX(), ball.GetY(),ball.GetXDir(), ball.GetYDir());
+                ball = new RoundBall(ball.GetX(), ball.GetY(), ball.GetXDir(), ball.GetYDir());
             }
-            else {
+            else
+            {
                 ball = new SquareRainbowBall(ball.GetX(), ball.GetY(), ball.GetXDir(), ball.GetYDir());
             }
         }
