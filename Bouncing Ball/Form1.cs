@@ -18,7 +18,7 @@ namespace Bouncing_Ball
         {
             //instantiate the ball with some random co-ordinates
             Random rnd = new Random();
-            ball = new RoundBall(rnd.Next(1, ClientSize.Width - tbSize.Value), rnd.Next(1, ClientSize.Height - tbSize.Value));
+            ball = new SpinningRainbowBall(rnd.Next(1, ClientSize.Width - tbSize.Value), rnd.Next(1, ClientSize.Height - tbSize.Value));
             //refresh the form to trigger the paint event
             Refresh();
         }
