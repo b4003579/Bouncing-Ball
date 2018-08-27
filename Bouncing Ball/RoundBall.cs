@@ -12,6 +12,7 @@ namespace Bouncing_Ball
             y = initialY;
         }
 
+        //Constructor which additionally takes direction for each axis
         public RoundBall(int initialX, int initialY, int initialXDir, int initialYDir)
         {
             x = initialX;
