@@ -4,12 +4,12 @@ namespace Bouncing_Ball
 {
     //Instantiable child of ball. Makes a ball that flashes all colours of the rainbow.
     //The effect is slightly aggressive
-    class SpinningRainbowBall : Ball
+    class SquareRainbowBall : Ball
     {
         public Brush[] brushes;
         int currentBrush = 0;
         //Constructor which takes starting co-orindates of the top left corner of the ball
-        public SpinningRainbowBall(int initialX, int initialY)
+        public SquareRainbowBall(int initialX, int initialY)
         {
             x = initialX;
             y = initialY;
@@ -20,12 +20,25 @@ namespace Bouncing_Ball
             };
 
         }
+
+        public SquareRainbowBall(int initialX, int initialY, int initialXDir, int initialYDir)
+        {
+            x = initialX;
+            y = initialY;
+            xDir = initialXDir;
+            yDir = initialYDir;
+            brushes = new Brush[]
+            {
+                Brushes.Red, Brushes.Orange, Brushes.Yellow, Brushes.Green, Brushes.Blue, Brushes.Indigo, Brushes.Violet
+            };
+        }
+
         //Draw a rainbow flashing ball of the size provided, on the provided graphics object
         public override void Draw(Graphics g, int size)
         {
             //uses the current coordinates as the top left corner of the space the ball will occupy.
             g.FillRectangle(brushes[currentBrush], x, y, size, size);
-            if (currentBrush == 6)
+            if (currentBrush >= brushes.Length - 1)
                 currentBrush = 0;
             else currentBrush++;
         }

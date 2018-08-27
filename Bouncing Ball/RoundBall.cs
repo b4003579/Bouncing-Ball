@@ -11,6 +11,15 @@ namespace Bouncing_Ball
             x = initialX;
             y = initialY;
         }
+
+        public RoundBall(int initialX, int initialY, int initialXDir, int initialYDir)
+        {
+            x = initialX;
+            y = initialY;
+            xDir = initialXDir;
+            yDir = initialYDir;
+        }
+
         //Draw a round blue ball of the size provided, on the provided graphics object
         public override void Draw(Graphics g, int size)
         {

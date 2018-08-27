@@ -6,11 +6,27 @@ namespace Bouncing_Ball
     public abstract class Ball
     {
         protected int x, y; // position of ball
-        protected int xDir = 1, yDir = 1; // direction of ball travel on each axis
+        protected int xDir = 1, yDir = 1; // direction of ball travel on each axis, set to negative to move left and/or down.
 
-        //Draw the ball using a provided graphics object and size value. This will be diferent for each ball type and must be overridden.
-        public abstract void Draw(Graphics g, int size);
+        public int GetX() {
+            return x;
+        }
 
+        public int GetXDir() {
+            return xDir;
+        }
+
+
+        public int GetY()
+        {
+            return y;
+        }
+
+        public int GetYDir()
+        {
+            return yDir;
+        }
+                
         //Check for boundary collisions, and then move the ball accordingly
         //It's still possible for the ball to get stuck if its size is increased while near the left or bottom of the window!
         public void Move(int size, int speed, int winWidth, int winHeight)
@@ -26,5 +42,9 @@ namespace Bouncing_Ball
             x += xDir * speed;
             y += yDir * speed;
         }
+
+        //Draw the ball using a provided graphics object and size value. This will be diferent for each ball type and must be overridden.
+        public abstract void Draw(Graphics g, int size);
+
     }
 }
