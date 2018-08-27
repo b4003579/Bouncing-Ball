@@ -34,6 +34,7 @@
             this.lblSize = new System.Windows.Forms.Label();
             this.lblSpeed = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.btnChange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).BeginInit();
             this.SuspendLayout();
@@ -42,22 +43,25 @@
             // 
             this.tbSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tbSize.Location = new System.Drawing.Point(12, 397);
-            this.tbSize.Minimum = 1;
+            this.tbSize.Maximum = 100;
+            this.tbSize.Minimum = 20;
             this.tbSize.Name = "tbSize";
             this.tbSize.Size = new System.Drawing.Size(104, 45);
             this.tbSize.TabIndex = 0;
-            this.tbSize.Value = 5;
+            this.tbSize.TickFrequency = 10;
+            this.tbSize.Value = 50;
             // 
             // tbSpeed
             // 
             this.tbSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tbSpeed.Location = new System.Drawing.Point(122, 397);
+            this.tbSpeed.Maximum = 5;
             this.tbSpeed.Minimum = 1;
             this.tbSpeed.Name = "tbSpeed";
             this.tbSpeed.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tbSpeed.Size = new System.Drawing.Size(104, 45);
             this.tbSpeed.TabIndex = 1;
-            this.tbSpeed.Value = 5;
+            this.tbSpeed.Value = 3;
             // 
             // lblSize
             // 
@@ -82,14 +86,26 @@
             // timer
             // 
             this.timer.Enabled = true;
-            this.timer.Interval = 50;
+            this.timer.Interval = 20;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // btnChange
+            // 
+            this.btnChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnChange.Location = new System.Drawing.Point(232, 381);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(69, 61);
+            this.btnChange.TabIndex = 4;
+            this.btnChange.Text = "Change ball type";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 454);
+            this.Controls.Add(this.btnChange);
             this.Controls.Add(this.lblSpeed);
             this.Controls.Add(this.lblSize);
             this.Controls.Add(this.tbSpeed);
@@ -114,6 +130,7 @@
         private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.Label lblSpeed;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button btnChange;
     }
 }
 
