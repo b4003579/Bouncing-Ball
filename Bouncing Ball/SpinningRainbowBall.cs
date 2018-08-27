@@ -3,6 +3,7 @@
 namespace Bouncing_Ball
 {
     //Instantiable child of ball. Makes a ball that flashes all colours of the rainbow.
+    //The effect is slightly aggressive
     class SpinningRainbowBall : Ball
     {
         public Brush[] brushes;
@@ -19,7 +20,7 @@ namespace Bouncing_Ball
             };
 
         }
-        //Draw a round blue ball of the size provided, on the provided graphics object
+        //Draw a rainbow flashing ball of the size provided, on the provided graphics object
         public override void Draw(Graphics g, int size)
         {
             //uses the current coordinates as the top left corner of the space the ball will occupy.

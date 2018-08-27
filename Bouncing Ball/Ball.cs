@@ -12,6 +12,7 @@ namespace Bouncing_Ball
         public abstract void Draw(Graphics g, int size);
 
         //Check for boundary collisions, and then move the ball accordingly
+        //It's still possible for the ball to get stuck if its size is increased while near the left or bottom of the window!
         public void Move(int size, int speed, int winWidth, int winHeight)
         {
             if (x + size >= winWidth || x <= 0)
